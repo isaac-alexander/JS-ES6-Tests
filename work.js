@@ -169,3 +169,210 @@ const cities = [
   "9. Paris"
  ];
  */
+
+
+// Step 1: Create Function  
+// Step 2: Create an empty array
+// Step 3: Loop through the array to get the element
+// Step 4: Get the first character
+// Step 5: Turn the first character to uppercase
+// Step 6: Get the remaining character
+// Step 7: Concatenate the first character to the remaining character
+// Step 8: Push into the empty array/new array
+// Step 9: Return the empty/new array
+// Step 10: Log the argument
+
+// Takes a city name and capitalizes only the first letter
+const capitalizeFirstLetter = (cityName) => {
+  const firstLetter = cityName.charAt(0).toUpperCase();
+  const restOfName = cityName.slice(1);
+  return firstLetter + restOfName;
+};
+
+// Return the cities with only the first letter capitalized
+const getCapitalizedCities = (cityList) => {
+  return cityList.map(city => capitalizeFirstLetter(city));
+};
+
+//Gets the index of each city and capitalizes the first letter
+const getCapitalizedCitiesWithIndex = (cityList) => {
+  return cityList.map((city, index) => `${index + 1}. ${capitalizeFirstLetter(city)}`);
+};
+
+const cities = [
+  "miami",
+  "barcelona",
+  "madrid",
+  "amsterdam",
+  "berlin",
+  "sao paulo",
+  "lisbon",
+  "mexico city",
+  "paris"
+];
+
+console.log("Capitalized Cities:");
+console.log(getCapitalizedCities(cities));
+
+console.log("Capitalized Cities with Numbers:");
+console.log(getCapitalizedCitiesWithIndex(cities));
+
+/////////////////////////////////////////////////////////////////////////
+//Task 6
+// const array = [0, 1, , , , 5, 6];
+
+//Expected output 
+// Visited index 0 with value 0
+// Visited index 1 with value 1
+// Visited index 2 with value undefined
+// Visited index 3 with value undefined
+// Visited index 4 with value undefined
+// Visited index 5 with value 5
+// Visited index 6 with value 6
+
+
+// Step 1: Create a function
+// Step 2: Loop through array using for loop with index
+// Step 3: Access value at each index
+// Step 4: Log the index and its value even if undefined
+
+const array = [0, 1, , , , 5, 6];
+
+const logVisitedIndexes = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`Visited index ${i} with value ${arr[i]}`);
+  }
+};
+
+logVisitedIndexes(array);
+
+//////////////////////////////////////////////////////////////////////////
+
+//Task 7
+//const array1 = [5, 12, 8, 130, 44];
+
+//return first element greater than 10 
+// Expected output: 12
+
+// Task 7 - Find first element greater than 10
+
+// Step 1: Create a function
+// Step 2: Use the find() method
+// Step 3: Inside find(), return true if the number is greater than 10
+// Step 4: Return the result
+
+const array1 = [5, 12, 8, 130, 44];
+
+const findFirstGreaterThanTen = (arr) => {
+  return arr.find(num => num > 10);
+};
+
+console.log(findFirstGreaterThanTen(array1)); // Output: 12
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// Task 8
+// const inventory = [
+//   { name: "apples", quantity: 2 },
+//   { name: "bananas", quantity: 0 },
+//   { name: "cherries", quantity: 5 },
+// ];
+
+// return element with name of cherries
+
+// // Expected output: { name: 'cherries', quantity: 5 }
+
+
+// return true of false if Apple is in the array of fruits 
+// Input: ["Banana", "Orange", "Strawberry", "Blueberry"]
+
+
+// Step 1: Create a function to find an item by name
+// Step 2: Use the find() method to match name with 'cherries'
+// Step 3: Return the matched object
+// Step 4: Create a function to check if 'Apple' exists in fruits array
+// Step 5: Use includes() and toLowerCase() for case-insensitive comparison
+// Step 6: Return true or false
+
+const findCherries = (items) => {
+  return items.find(item => item.name === "cherries");
+};
+
+
+const isApplePresent = (fruitList) => {
+  return fruitList.some(fruit => fruit.toLowerCase() === "apple");
+};
+
+const inventory = [
+  { name: "apples", quantity: 2 },
+  { name: "bananas", quantity: 0 },
+  { name: "cherries", quantity: 5 },
+];
+
+const fruits = ["Banana", "Orange", "Strawberry", "Blueberry"];
+
+console.log(findCherries(inventory)); // { name: 'cherries', quantity: 5 }
+console.log(isApplePresent(fruits));  // false
+
+//////////////////////////////////////////////////////////////////////////
+
+// Task 9
+// Given an array of numbers, return a new array that has only the numbers that are 5 or greater.
+// [3, 6, 8, 2]
+
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), return true if number is >= 5
+// Step 4: Return the filtered array
+
+const numbers_1 = [3, 6, 8, 2];
+
+const filterFiveOrGreater = (arr) => {
+  return arr.filter(num => num >= 5);
+};
+
+console.log(filterFiveOrGreater(numbers_1)); // Output: [6, 8]
+
+////////////////////////////////////////////////////////////////////////
+
+// Task 10
+// Given an array of numbers, return a new array that only includes the even numbers.
+// [3, 6, 8, 2]
+
+// Task 10 - Filter even numbers
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), return true if number is divisible by 2
+// Step 4: Return the filtered array
+
+const numbers_2 = [3, 6, 8, 2];
+
+const filterEvenNumbers = (arr) => {
+  return arr.filter(num => num % 2 === 0);
+};
+
+console.log(filterEvenNumbers(numbers_2)); // Output: [6, 8, 2]
+
+/////////////////////////////////////////////////////////////////////////
+
+// Task 11
+// Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length
+// ["dog", "wolf", "by", "family", "eaten", "camping"]
+
+// Task 11 - Filter words with 5 characters or fewer
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), check if word length is <= 5
+// Step 4: Return the filtered array
+
+const words = ["dog", "wolf", "by", "family", "eaten", "camping"];
+
+const filterShortWords = (arr) => {
+  return arr.filter(word => word.length <= 5);
+};
+
+console.log(filterShortWords(words)); // Output: ["dog", "wolf", "by", "eaten"]
