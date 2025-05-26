@@ -376,3 +376,208 @@ const filterShortWords = (arr) => {
 };
 
 console.log(filterShortWords(words)); // Output: ["dog", "wolf", "by", "eaten"]
+
+//////////////////////////////////////////////////////////////////////////
+
+// Task 12
+// Given an array of people objects, return a new array that has filtered out all those who don't belong to the club.
+// [
+//     { name: "Angelina Jolie", member: true },
+//     { name: "Eric Jones", member: false },
+//     { name: "Paris Hilton", member: true },
+//     { name: "Kayne West", member: false },
+//     { name: "Bob Ziroll", member: true }
+// ]
+
+// Task 12 - Filter club members
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), return true if person is a member
+// Step 4: Return the filtered array
+
+const people = [
+  { name: "Angelina Jolie", member: true },
+  { name: "Eric Jones", member: false },
+  { name: "Paris Hilton", member: true },
+  { name: "Kayne West", member: false },
+  { name: "Bob Ziroll", member: true }
+];
+
+const getClubMembers = (arr) => {
+  return arr.filter(person => person.member === true);
+};
+
+console.log(getClubMembers(people));
+/* 
+[
+  { name: 'Angelina Jolie', member: true },
+  { name: 'Paris Hilton', member: true },
+  { name: 'Bob Ziroll', member: true }
+]
+*/
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+// Task 13
+// Make a filtered list of all the people who are old enough to see The Matrix (older than 18)
+// [
+//     { name: "Angelina Jolie", age: 80 },
+//     { name: "Eric Jones", age: 2 },
+//     { name: "Paris Hilton", age: 5 },
+//     { name: "Kayne West", age: 16 },
+//     { name: "Bob Ziroll", age: 100 }
+// ]
+
+// Task 13 - Filter people old enough to watch The Matrix (age > 18)
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), return true if age > 18
+// Step 4: Return the filtered array
+
+const people_2 = [
+  { name: "Angelina Jolie", age: 80 },
+  { name: "Eric Jones", age: 2 },
+  { name: "Paris Hilton", age: 5 },
+  { name: "Kayne West", age: 16 },
+  { name: "Bob Ziroll", age: 100 }
+];
+
+const oldEnoughForMatrix = (arr) => {
+  return arr.filter(person => person.age > 18);
+};
+
+console.log(oldEnoughForMatrix(people_2));
+/* :
+[
+  { name: 'Angelina Jolie', age: 80 },
+  { name: 'Bob Ziroll', age: 100 }
+]
+*/
+
+
+//////////////////////////////////////////////////////////////////////////
+
+// Task 14
+// Get all male characters
+// Get all female characters
+// const characters = [
+//   {
+//     name: "Luke Skywalker",
+//     height: 172,
+//     mass: 77,
+//     eye_color: "blue",
+//     gender: "male",
+//   },
+//   {
+//     name: "Darth Vader",
+//     height: 202,
+//     mass: 136,
+//     eye_color: "yellow",
+//     gender: "male",
+//   },
+//   {
+//     name: "Leia Organa",
+//     height: 150,
+//     mass: 49,
+//     eye_color: "brown",
+//     gender: "female",
+//   },
+//   {
+//     name: "Anakin Skywalker",
+//     height: 188,
+//     mass: 84,
+//     eye_color: "blue",
+//     gender: "male",
+//   },
+// ];
+
+// Task 14 - Filter characters by gender
+
+// Step 1: Create a function for male characters
+// Step 2: Use filter() to return characters where gender is 'male'
+// Step 3: Create a function for female characters
+// Step 4: Use filter() to return characters where gender is 'female'
+
+const getMaleCharacters = (arr) => {
+  return arr.filter(char => char.gender === "male");
+};
+
+
+const getFemaleCharacters = (arr) => {
+  return arr.filter(char => char.gender === "female");
+};
+
+const characters = [
+  {
+    name: "Luke Skywalker",
+    height: 172,
+    mass: 77,
+    eye_color: "blue",
+    gender: "male",
+  },
+  {
+    name: "Darth Vader",
+    height: 202,
+    mass: 136,
+    eye_color: "yellow",
+    gender: "male",
+  },
+  {
+    name: "Leia Organa",
+    height: 150,
+    mass: 49,
+    eye_color: "brown",
+    gender: "female",
+  },
+  {
+    name: "Anakin Skywalker",
+    height: 188,
+    mass: 84,
+    eye_color: "blue",
+    gender: "male",
+  },
+];
+
+console.log(getMaleCharacters(characters));
+console.log(getFemaleCharacters(characters));
+
+/*
+[
+  { name: 'Luke Skywalker', ... },
+  { name: 'Darth Vader', ... },
+  { name: 'Anakin Skywalker', ... }
+]
+
+[
+  { name: 'Leia Organa', ... }
+]
+*/
+
+
+//////////////////////////////////////////////////////////////////////////
+
+// Task 15
+// function that filters valid emails based on the presence of “@”.
+//  Input ["alice@gmail.com", "bob@", "charlie@domain.com", "dave"]
+//  Output ["alice@gmail.com", "bob@", "charlie@domain.com"]
+
+// Task 15 - Filter valid emails (must contain '@')
+
+// Step 1: Create a function
+// Step 2: Use the filter() method
+// Step 3: Inside filter(), check if email includes '@'
+// Step 4: Return the filtered array
+
+const emails = ["alice@gmail.com", "bob@", "charlie@domain.com", "dave"];
+
+const filterValidEmails = (arr) => {
+  return arr.filter(email => email.includes("@"));
+};
+
+
+console.log(filterValidEmails(emails));
+// Output: ["alice@gmail.com", "bob@", "charlie@domain.com"]
